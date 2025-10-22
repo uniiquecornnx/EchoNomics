@@ -1,0 +1,26 @@
+{
+  "name": "base-dynamic-token-deploy",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Deploy tokens on Base Sepolia - Hardhat 3 with Ignition",
+  "scripts": {
+    "deploy": "npx hardhat ignition deploy ignition/modules/Token.ts --network baseSepolia",
+    "compile": "npx hardhat compile",
+    "test": "npx hardhat test",
+    "node": "npx hardhat node"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-ignition": "^3.0.3",
+    "@nomicfoundation/hardhat-ignition-ethers": "^3.0.3",
+    "@nomicfoundation/hardhat-verify": "^3.0.4",
+    "@types/node": "^20.0.0",
+    "hardhat": "^3.0.8",
+    "typescript": "^5.6.3",
+    "ts-node": "^10.9.2",
+    "dotenv": "^16.4.5",
+    "ethers": "^6.13.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.1.0"
+  }
+}
