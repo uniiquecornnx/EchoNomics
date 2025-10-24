@@ -1,0 +1,7 @@
+{
+  "CustomTokenModule": {
+    "tokenName": "nn",
+    "tokenSymbol": "NN",
+    "initialSupply": 1000000
+  }
+}

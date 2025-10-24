@@ -4,7 +4,8 @@
   "type": "module",
   "description": "Deploy tokens on Base Sepolia - Hardhat 3 with Ignition",
   "scripts": {
-    "deploy": "npx hardhat ignition deploy ignition/modules/Token.ts --network baseSepolia",
+    "deploy": "tsx scripts/deploy.ts",
+    "deploy:direct": "npx hardhat ignition deploy ignition/modules/Token.ts --network baseSepolia",
     "compile": "npx hardhat compile",
     "test": "npx hardhat test",
     "node": "npx hardhat node"
@@ -14,13 +15,21 @@
     "@nomicfoundation/hardhat-ignition-ethers": "^3.0.3",
     "@nomicfoundation/hardhat-verify": "^3.0.4",
     "@types/node": "^20.0.0",
-    "hardhat": "^3.0.8",
-    "typescript": "^5.6.3",
-    "ts-node": "^10.9.2",
     "dotenv": "^16.4.5",
-    "ethers": "^6.13.0"
+    "hardhat": "^3.0.8",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.20.6",
+    "typescript": "^5.6.3"
   },
   "dependencies": {
-    "@openzeppelin/contracts": "^5.1.0"
+    "@openzeppelin/contracts": "^5.1.0",
+    "@supabase/supabase-js": "^2.39.0",
+    "hls.js": "^1.4.12",
+    "ethers": "^6.13.0",
+    "react-player": "^2.13.0",
+    "axios": "^1.6.0",
+    "livepeer": "^2.0.0",
+    "@livepeer/react": "^2.0.0",
+    "@livepeer/core-react": "^2.0.0"
   }
 }

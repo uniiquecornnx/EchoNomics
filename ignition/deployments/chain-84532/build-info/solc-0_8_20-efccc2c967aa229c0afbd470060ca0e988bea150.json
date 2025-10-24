@@ -1,0 +1,39 @@
+{
+  "_format": "hh3-sol-build-info-1",
+  "id": "solc-0_8_20-efccc2c967aa229c0afbd470060ca0e988bea150",
+  "solcVersion": "0.8.20",
+  "solcLongVersion": "0.8.20+commit.a1b79de6",
+  "userSourceNameMap": {
+    "contracts/TipJar.sol": "project/contracts/TipJar.sol"
+  },
+  "input": {
+    "language": "Solidity",
+    "settings": {
+      "evmVersion": "shanghai",
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "outputSelection": {
+        "*": {
+          "": [
+            "ast"
+          ],
+          "*": [
+            "abi",
+            "evm.bytecode",
+            "evm.deployedBytecode",
+            "evm.methodIdentifiers",
+            "metadata"
+          ]
+        }
+      },
+      "remappings": []
+    },
+    "sources": {
+      "project/contracts/TipJar.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.20;\n\ncontract TipJar {\n    event TipSent(address indexed from, address indexed to, uint256 amount, string message);\n\n    function sendTip(address payable streamer, string calldata message) external payable {\n        require(msg.value > 0, \"Tip must be greater than 0\");\n        streamer.transfer(msg.value);\n        emit TipSent(msg.sender, streamer, msg.value, message);\n    }\n}\n"
+      }
+    }
+  }
+}

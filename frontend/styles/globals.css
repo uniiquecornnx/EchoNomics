@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom global styles */
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* RainbowKit customizations */
+[data-rk] {
+  --rk-colors-accentColor: #3b82f6;
+  --rk-colors-accentColorForeground: #ffffff;
+  --rk-colors-actionButtonBorder: #e5e7eb;
+  --rk-colors-actionButtonBorderMobile: #e5e7eb;
+  --rk-colors-actionButtonSecondaryBackground: #f9fafb;
+  --rk-colors-closeButton: #6b7280;
+  --rk-colors-closeButtonBackground: #f3f4f6;
+  --rk-colors-connectButtonBackground: #ffffff;
+  --rk-colors-connectButtonBackgroundError: #fef2f2;
+  --rk-colors-connectButtonInnerBackground: #f9fafb;
+  --rk-colors-connectButtonText: #111827;
+  --rk-colors-connectButtonTextError: #dc2626;
+  --rk-colors-connectionIndicator: #10b981;
+  --rk-colors-error: #dc2626;
+  --rk-colors-generalBorder: #e5e7eb;
+  --rk-colors-generalBorderDim: #f3f4f6;
+  --rk-colors-menuBackground: #ffffff;
+  --rk-colors-menuText: #111827;
+  --rk-colors-modalBackdrop: rgba(0, 0, 0, 0.5);
+  --rk-colors-modalBackground: #ffffff;
+  --rk-colors-modalBorder: #e5e7eb;
+  --rk-colors-modalText: #111827;
+  --rk-colors-modalTextDim: #6b7280;
+  --rk-colors-modalTextSecondary: #6b7280;
+  --rk-colors-profileAction: #f9fafb;
+  --rk-colors-profileActionHover: #f3f4f6;
+  --rk-colors-profileForeground: #111827;
+  --rk-colors-selectedOptionBorder: #3b82f6;
+  --rk-colors-standby: #6b7280;
+}
