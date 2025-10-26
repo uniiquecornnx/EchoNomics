@@ -16,7 +16,7 @@ export default function ConnectWallet() {
     <div className="flex items-center space-x-2">
       <ConnectButton showBalance={false} chainStatus="none" />
       {mounted && isConnected && shortAddress && (
-        <span className="text-sm text-gray-600">
+        <span className="text-sm text-green-400 bitcount-normal">
           Connected: {shortAddress}
         </span>
       )}

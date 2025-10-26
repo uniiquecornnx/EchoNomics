@@ -27,6 +27,8 @@ export default function Home() {
       
       <p>Quick links:</p>
       <ul>
+        <li><Link href="/stream-demo">🎬 Three-Column Stream Layout (Static Demo)</Link></li>
+        <li><Link href="/stream-with-player-demo">📺 Three-Column Stream Layout with Video Player</Link></li>
         <li><Link href="/streamer/dashboard-simple">Streamer Dashboard (create stream)</Link></li>
         <li><Link href="/stream-viewer">Interactive Stream Viewer</Link></li>
         <li><Link href="/nexus-demo">Avail Nexus Cross-Chain Demo</Link></li>

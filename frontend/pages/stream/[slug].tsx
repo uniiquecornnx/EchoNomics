@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
-import { Player } from '@livepeer/react'
+import Player from '../../components/Player'
 import { supabase } from '../../lib/supabaseClient'
 import Chat from '../../components/Chat'
 import TipJar from '../../components/TipJar'
@@ -72,10 +72,10 @@ const StreamViewer: React.FC = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center">
+      <div className="min-h-screen retro-gradient-bg text-green-400 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white mx-auto mb-4"></div>
-          <p>Loading stream...</p>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-400 mx-auto mb-4"></div>
+          <p className="bitcount-normal retro-text-glow">Loading stream...</p>
         </div>
       </div>
     )
@@ -83,13 +83,13 @@ const StreamViewer: React.FC = () => {
 
   if (error || !streamData) {
     return (
-      <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center">
+      <div className="min-h-screen retro-gradient-bg text-green-400 flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">Stream Not Found</h1>
-          <p className="text-gray-400 mb-6">{error || 'The stream you are looking for does not exist.'}</p>
+          <h1 className="text-2xl font-bold mb-4 bitcount-normal retro-text-glow">Stream Not Found</h1>
+          <p className="text-green-300 mb-6 bitcount-normal">{error || 'The stream you are looking for does not exist.'}</p>
           <button
             onClick={() => router.push('/')}
-            className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg"
+            className="px-6 py-2 bg-gradient-to-r from-green-500 to-cyan-500 hover:from-green-400 hover:to-cyan-400 text-black rounded-lg font-bold transition-all duration-300 retro-glow bitcount-normal"
           >
             Go Home
           </button>
@@ -99,44 +99,43 @@ const StreamViewer: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <div className="min-h-screen retro-gradient-bg text-green-400">
       <div className="max-w-7xl mx-auto p-6">
         {/* Stream Header */}
         <div className="mb-6">
-          <h1 className="text-3xl font-bold mb-2">{streamData.title}</h1>
-          <p className="text-gray-400">Stream ID: {streamData.slug}</p>
+          <h1 className="text-3xl font-bold mb-2 bitcount-normal retro-text-glow">{streamData.title}</h1>
+          <p className="text-green-300 bitcount-normal">Stream ID: {streamData.slug}</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Main Stream Area */}
           <div className="lg:col-span-2 space-y-6">
             {/* Video Player */}
-            <div className="bg-black rounded-lg overflow-hidden">
+            <div className="bg-black rounded-lg overflow-hidden border border-green-500 retro-border-glow">
               <Player
-                playbackId={streamData.playbackId}
-                autoPlay
+                playbackUrl={streamData.hlsPlaybackUrl}
+                autoPlay={true}
                 muted={false}
-                controls
-                poster={streamData.thumbnailUrl}
+                controls={true}
                 className="w-full aspect-video"
               />
             </div>
 
             {/* Stream Info */}
-            <div className="bg-gray-800 rounded-lg p-6">
-              <h2 className="text-xl font-semibold mb-4">Stream Information</h2>
-              <div className="space-y-2 text-sm">
+            <div className="bg-black border border-green-500 rounded-lg p-6 retro-border-glow">
+              <h2 className="text-xl font-bold mb-4 bitcount-normal retro-text-glow">Stream Information</h2>
+              <div className="space-y-2 text-sm bitcount-normal">
                 <div className="flex justify-between">
-                  <span className="text-gray-400">Title:</span>
-                  <span>{streamData.title}</span>
+                  <span className="text-green-300">Title:</span>
+                  <span className="text-green-400">{streamData.title}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-400">Stream ID:</span>
-                  <span className="font-mono">{streamData.slug}</span>
+                  <span className="text-green-300">Stream ID:</span>
+                  <span className="text-green-400 bitcount-normal">{streamData.slug}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-400">Playback ID:</span>
-                  <span className="font-mono text-xs">{streamData.playbackId}</span>
+                  <span className="text-green-300">Playback ID:</span>
+                  <span className="text-green-400 bitcount-normal text-xs">{streamData.playbackId}</span>
                 </div>
               </div>
             </div>
@@ -145,8 +144,8 @@ const StreamViewer: React.FC = () => {
           {/* Sidebar */}
           <div className="space-y-6">
             {/* Chat */}
-            <div className="bg-gray-800 rounded-lg p-6">
-              <h3 className="text-lg font-semibold mb-4">Live Chat</h3>
+            <div className="bg-black border border-green-500 rounded-lg p-6 retro-border-glow">
+              <h3 className="text-lg font-bold mb-4 bitcount-normal retro-text-glow">Live Chat</h3>
               <Chat streamId={streamData.id} />
             </div>
 

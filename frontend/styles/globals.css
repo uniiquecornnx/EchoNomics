@@ -1,10 +1,176 @@
+/* Import Bitcount Grid Single font */
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* Custom global styles */
 body {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Bitcount Grid Single", system-ui, -apple-system, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
+  background: #0a0a0a;
+  color: #00ff41;
+}
+
+/* Retro color variables */
+:root {
+  --retro-bg-primary: #0a0a0a;
+  --retro-bg-secondary: #1a1a1a;
+  --retro-bg-tertiary: #2a2a2a;
+  --retro-accent-green: #00ff41;
+  --retro-accent-cyan: #00ffff;
+  --retro-accent-purple: #ff00ff;
+  --retro-accent-orange: #ff6600;
+  --retro-accent-red: #ff0040;
+  --retro-text-primary: #00ff41;
+  --retro-text-secondary: #ffffff;
+  --retro-text-muted: #888888;
+  --retro-border: #333333;
+  --retro-glow: 0 0 20px rgba(0, 255, 65, 0.3);
+}
+
+/* Bitcount Grid Single font utility classes */
+.bitcount-light {
+  font-family: "Bitcount Grid Single", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
+}
+
+.bitcount-normal {
+  font-family: "Bitcount Grid Single", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
+}
+
+.bitcount-medium {
+  font-family: "Bitcount Grid Single", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
+}
+
+.bitcount-bold {
+  font-family: "Bitcount Grid Single", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
+}
+
+/* Retro utility classes */
+.retro-glow {
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+}
+
+.retro-glow-cyan {
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+.retro-glow-purple {
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+}
+
+.retro-glow-orange {
+  box-shadow: 0 0 20px rgba(255, 102, 0, 0.3);
+}
+
+.retro-text-glow {
+  text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+}
+
+.retro-border-glow {
+  border: 1px solid #00ff41;
+  box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+}
+
+.retro-gradient-bg {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+}
+
+.retro-gradient-accent {
+  background: linear-gradient(45deg, #00ff41, #00ffff, #ff00ff);
+}
+
+/* Elegant transitions and effects */
+.elegant-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.elegant-hover {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.elegant-hover:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 25px rgba(0, 255, 65, 0.4);
+}
+
+.smooth-glow {
+  animation: pulse-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-glow {
+  from {
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+  }
+  to {
+    box-shadow: 0 0 30px rgba(0, 255, 65, 0.5);
+  }
+}
+
+/* Enhanced symmetry and spacing */
+.symmetric-spacing {
+  padding: 1.5rem;
+}
+
+.symmetric-margins {
+  margin: 1.5rem;
+}
+
+.retro-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.retro-scrollbar::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+.retro-scrollbar::-webkit-scrollbar-thumb {
+  background: #00ff41;
+  border-radius: 4px;
+}
+
+.retro-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #00ffff;
 }
 
 /* RainbowKit customizations */
